@@ -1,30 +1,34 @@
 function Todos(todos) {
   return (
-    <div>
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Task</th>
-            <th scope="col">Date</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Del</th>
-          </tr>
-        </thead>
-        {todos.todos.map((todo) => {
-          return (
-            <tbody key={todo.id}>
+    <div className="row justify-content-center" style={{marginTop:"30px"}}>
+      <div className="col-sm-8 text-center">
+        <div style={{ width: "100%" }}>
+          <table className="table table-striped border">
+            <thead>
               <tr>
-                <th scope="row">{todo.id}</th>
-                <td>{todo.task}</td>
-                <td>{todo.date}</td>
-                <td>Edit</td>
-                <td>Del</td>
+                <th scope="col">#</th>
+                <th scope="col">Task</th>
+                <th scope="col">Date</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Del</th>
               </tr>
-            </tbody>
-          );
-        })}
-      </table>
+            </thead>
+            {todos.todos.map((todo) => {
+              return (
+                <tbody key={todo.id}>
+                  <tr>
+                    <th scope="row">{todo.id}</th>
+                    <td>{todo.task}</td>
+                    <td>{todo.date}</td>
+                    <td>Edit</td>
+                    <td>Del</td>
+                  </tr>
+                </tbody>
+              );
+            })}
+          </table>
+        </div>
+      </div>
     </div>
   );
 }
