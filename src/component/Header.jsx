@@ -1,7 +1,18 @@
 import "./Header.css";
 import miniLogo from "../mini-logo.png";
+import { useState } from "react";
 
-function Header() {
+
+function Header({addNewTodo}) {
+
+  const [task, setTask]= useState('')
+
+const addTask= (e)=>{
+   e.preventDefault();
+   addNewTodo(task)
+   setTask('')
+}
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -22,20 +33,13 @@ function Header() {
               </a>
             </li>
           </ul>
-          <form className="form-inline my-2 my-lg-0">
-            <input
-              className="form-control mr-sm-2"
-              type="text"
-              placeholder="Add todo"
-              aria-label="Add"
-            />
-            <button
-              className="btn btn-outline-success my-2 my-sm-0"
-              type="submit"
-            >
-              Add
-            </button>
+
+          <form className="form-inline my-2 my-lg-0" onSubmit={addTask}>
+          <input type="text" id="task" className="form-control" value={task} onChange={(e) => setTask(e.target.value)} />
+            <input type="submit" value="Add" className="btn btn-outline-success my-2 my-sm-0" />
           </form>
+
+
         </div>
       </nav>
     </div>
