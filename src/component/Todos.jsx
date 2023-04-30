@@ -9,8 +9,6 @@ function Todos(todos) {
                 <th scope="col">#</th>
                 <th scope="col">Task</th>
                 <th scope="col">Date</th>
-                <th scope="col">Edit</th>
-                <th scope="col">Del</th>
               </tr>
             </thead>
             {todos.todos.map((todo) => {
@@ -20,8 +18,6 @@ function Todos(todos) {
                     <th scope="row">{todo.id}</th>
                     <td>{todo.task}</td>
                     <td>{todo.date}</td>
-                    <td>Edit</td>
-                    <td>Del</td>
                   </tr>
                 </tbody>
               );

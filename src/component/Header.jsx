@@ -1,6 +1,7 @@
 import "./Header.css";
 import miniLogo from "../mini-logo.png";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 function Header({addNewTodo}) {
@@ -23,14 +24,10 @@ const addTask= (e)=>{
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="/">
-                Home
-              </a>
+              <Link className="nav-link" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/edit">
-                Edit/Del
-              </a>
+              <Link className="nav-link" to="/edit_del"> Edit/Del </Link>
             </li>
           </ul>
 
