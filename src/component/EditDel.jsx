@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function EditDel({todos, delItem}) {
 
     const deleteItem = (id)=>{
@@ -25,7 +27,7 @@ function EditDel({todos, delItem}) {
                       <th scope="row">{todo.id}</th>
                       <td>{todo.task}</td>
                       <td>{todo.date}</td>
-                      <td>Edit</td>
+                      <td><Link to={'/edit/'+todo.id} className="btn btn-warning rounded-circle">📝</Link></td>
                       <td> <button onClick={()=>{deleteItem(todo.id)}} className="btn btn-light btn btn-outline-danger rounded-circle" >❌</button> </td>
                     </tr>
                   </tbody>
